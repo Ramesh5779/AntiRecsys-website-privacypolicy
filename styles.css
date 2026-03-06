@@ -479,28 +479,93 @@ footer {
 
 /* Responsive */
 @media (max-width: 768px) {
+    header nav {
+        gap: 8px;
+    }
+
+    .logo-icon {
+        font-size: 22px;
+    }
+
+    .logo-text {
+        font-size: 17px;
+    }
+
+    .nav-links {
+        gap: 12px;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+    }
+
     .hero {
-        padding: 140px 24px 60px;
+        padding: 120px 16px 50px;
+    }
+
+    .hero-badge {
+        font-size: 12px;
+        padding: 6px 14px;
+        margin-bottom: 24px;
     }
 
     .hero h1 {
-        font-size: 36px;
+        font-size: 32px;
+    }
+
+    .hero-subtitle {
+        font-size: 15px;
+        margin-bottom: 28px;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .cta-buttons .btn {
+        width: 100%;
+        max-width: 340px;
+        justify-content: center;
+        padding: 14px 24px;
+        font-size: 15px;
+    }
+
+    .download-note {
+        font-size: 12px;
+        margin-top: 16px;
+        padding: 0 8px;
+    }
+
+    .features {
+        padding: 50px 16px;
+    }
+
+    .features h2 {
+        font-size: 28px;
+        margin-bottom: 36px;
+    }
+
+    .privacy-highlight {
+        padding: 30px 16px 50px;
     }
 
     .privacy-card {
         flex-direction: column;
         text-align: center;
+        padding: 24px;
     }
 
     .legal-content {
         padding: 32px 24px;
     }
 
-    .nav-links {
-        gap: 20px;
+    .footer-links {
+        gap: 16px;
     }
 
-    .footer-links {
-        gap: 20px;
+    .footer-links a {
+        font-size: 13px;
     }
 }
