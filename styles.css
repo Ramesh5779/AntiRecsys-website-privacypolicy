@@ -351,6 +351,26 @@ header nav {
     margin-top: 20px;
 }
 
+.download-counter {
+    margin-top: 24px;
+    text-align: center;
+}
+
+.download-counter a {
+    display: inline-block;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.download-counter a:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 12px rgba(0, 255, 157, 0.4));
+}
+
+.download-badge {
+    height: 36px;
+    border-radius: 8px;
+}
+
 .store-button {
     transition: transform 0.3s ease;
 }
