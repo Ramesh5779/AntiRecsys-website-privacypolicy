@@ -145,7 +145,7 @@ header nav {
 
 .cta-buttons {
     display: flex;
-    gap: 16px;
+    gap: 20px;
     justify-content: center;
     flex-wrap: wrap;
     align-items: center;
@@ -155,22 +155,29 @@ header nav {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, filter 0.2s ease;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 .store-badge-link:hover {
     transform: scale(1.05);
+    filter: drop-shadow(0 0 12px rgba(0, 240, 255, 0.35));
 }
 
+/* Apple badge — SVG has no padding, use as-is */
 .store-badge {
-    height: 48px;
+    height: 52px;
     width: auto;
-    border-radius: 8px;
+    display: block;
 }
 
+/* Google Play PNG has ~20% built-in padding — clip it to match Apple visually */
 .play-store-badge {
-    height: 70px;
-    margin: -11px 0;
+    height: 78px;    /* renders at 52px visual height after trimming the padding */
+    width: auto;
+    margin: -13px -8px; /* trim Google's built-in padding */
+    display: block;
 }
 
 /* Features Section */
@@ -487,9 +494,17 @@ footer {
     }
 
     .cta-buttons {
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
-        gap: 12px;
+        justify-content: center;
+        gap: 14px;
+    }
+
+    /* Stack vertically on very small screens */
+    @media (max-width: 420px) {
+        .cta-buttons {
+            flex-direction: column;
+        }
     }
 
     .download-note {
