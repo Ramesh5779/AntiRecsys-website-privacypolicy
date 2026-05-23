@@ -172,12 +172,12 @@ header nav {
     background: #000; /* prevents any white bleed showing through gaps */
 }
 
-/* App Store — cyan glow */
+/* App Store - cyan glow */
 .store-badge-link:nth-child(1) {
     animation: glow-cyan 2.8s ease-in-out infinite;
 }
 
-/* Google Play — green glow */
+/* Google Play - green glow */
 .store-badge-link:nth-child(2) {
     animation: glow-green 2.8s ease-in-out infinite;
     animation-delay: 1.4s; /* offset so they don't pulse in sync */
@@ -197,14 +197,14 @@ header nav {
     box-shadow: 0 0 28px 8px rgba(0, 255, 157, 0.7), 0 0 60px 18px rgba(0, 255, 157, 0.3);
 }
 
-/* Apple badge — SVG has no padding, use as-is */
+/* Apple badge - SVG has no padding, use as-is */
 .store-badge {
     height: 52px;
     width: auto;
     display: block;
 }
 
-/* Google Play PNG has white padding baked in — clip all sides */
+/* Google Play PNG has white padding baked in - clip all sides */
 .play-store-badge {
     height: 78px;    /* renders at ~52px visual height after trimming */
     width: auto;
