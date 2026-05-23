@@ -169,6 +169,7 @@ header nav {
     transition: transform 0.25s ease, box-shadow 0.25s ease;
     border-radius: 12px;
     overflow: hidden;
+    background: #000; /* prevents any white bleed showing through gaps */
 }
 
 /* App Store — cyan glow */
@@ -203,11 +204,11 @@ header nav {
     display: block;
 }
 
-/* Google Play PNG has ~20% built-in padding — clip it to match Apple visually */
+/* Google Play PNG has white padding baked in — clip all sides */
 .play-store-badge {
-    height: 78px;    /* renders at 52px visual height after trimming the padding */
+    height: 78px;    /* renders at ~52px visual height after trimming */
     width: auto;
-    margin: -13px -8px; /* trim Google's built-in padding */
+    margin: -13px -20px; /* trim top/bottom -13px, sides -20px to remove white strips */
     display: block;
 }
 
