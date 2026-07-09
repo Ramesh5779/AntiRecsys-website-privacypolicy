@@ -507,22 +507,23 @@ footer {
     }
 
     .hero {
-        padding: 120px 16px 50px;
+        padding: 90px 16px 30px;
     }
 
     .hero-badge {
         font-size: 12px;
         padding: 6px 14px;
-        margin-bottom: 24px;
+        margin-bottom: 16px;
     }
 
     .hero h1 {
         font-size: 32px;
+        margin-bottom: 16px;
     }
 
     .hero-subtitle {
         font-size: 15px;
-        margin-bottom: 28px;
+        margin-bottom: 20px;
     }
 
     .cta-buttons {
