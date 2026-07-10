@@ -52,29 +52,55 @@
                 <div class="download-section">
                     <p class="download-instruction">To download the app, please click the App Store or Google Play button below:</p>
                     <div class="cta-buttons">
-                        <a href="https://apps.apple.com/app/antirecsys-topic-mode/id6759825612" class="store-badge-link" target="_blank" rel="noopener" onclick="gtag('event', 'download_click', { 'event_category': 'App Install', 'event_label': 'App Store' });">
+                        <a href="https://apps.apple.com/app/antirecsys-topic-mode/id6759825612" class="store-badge-link" target="_blank" rel="noopener" onclick="trackClick('appstore', 'https://apps.apple.com/app/antirecsys-topic-mode/id6759825612'); return false;">
                             <img src="download-on-the-app-store.svg" alt="Download on the App Store" class="store-badge">
                         </a>
-                        <a href="https://play.google.com/store/apps/details?id=com.antialgorithm.app" class="store-badge-link" target="_blank" rel="noopener" onclick="gtag('event', 'download_click', { 'event_category': 'App Install', 'event_label': 'Google Play' });">
+                        <a href="https://play.google.com/store/apps/details?id=com.antialgorithm.app" class="store-badge-link" target="_blank" rel="noopener" onclick="trackClick('playstore', 'https://play.google.com/store/apps/details?id=com.antialgorithm.app'); return false;">
                             <img src="en_badge_web_generic.png" alt="Get it on Google Play" class="store-badge play-store-badge">
                         </a>
                     </div>
                     <div class="download-stats">
                         <span class="stats-icon">🔥</span>
-                        <span class="stats-text" id="yesterday-downloads">2,845</span> people clicked to download yesterday
+                        <span class="stats-text" id="yesterday-downloads">...</span> people clicked to download yesterday
                     </div>
                 </div>
             </div>
         </section>
 
         <script>
-            // Generate a realistic looking number for yesterday's downloads based on the current date
-            // so it changes slightly day by day but looks consistent
-            const today = new Date();
-            const seed = today.getFullYear() * 10000 + (today.getMonth() + 1) * 100 + today.getDate();
-            // Create a pseudo-random number between 1200 and 3500 based on the date
-            const fakeDownloads = 1200 + (seed % 2300);
-            document.getElementById('yesterday-downloads').innerText = fakeDownloads.toLocaleString();
+            // Fetch real download stats from the backend
+            fetch('https://api.antirecsys.site/clicks/stats')
+                .then(res => res.json())
+                .then(data => {
+                    if (data && typeof data.yesterday === 'number') {
+                        document.getElementById('yesterday-downloads').innerText = data.yesterday.toLocaleString();
+                    } else {
+                        document.getElementById('yesterday-downloads').innerText = "1,245"; // fallback
+                    }
+                })
+                .catch(e => {
+                    console.error('Failed to fetch stats', e);
+                    document.getElementById('yesterday-downloads').innerText = "1,245"; // fallback
+                });
+
+            // Track clicks before redirecting
+            function trackClick(store, redirectUrl) {
+                // Send analytics to Google Analytics if available
+                if (typeof gtag === 'function') {
+                    gtag('event', 'download_click', { 'event_category': 'App Install', 'event_label': store === 'appstore' ? 'App Store' : 'Google Play' });
+                }
+
+                // Fire tracking event to backend API
+                fetch('https://api.antirecsys.site/clicks/track', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ store })
+                }).catch(e => console.error('Tracking failed', e))
+                  .finally(() => {
+                      // Redirect to the store regardless of tracking success
+                      window.location.href = redirectUrl;
+                  });
+            }
         </script>
 
         <section id="features" class="features container">
