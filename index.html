@@ -59,10 +59,6 @@
                             <img src="en_badge_web_generic.png" alt="Get it on Google Play" class="store-badge play-store-badge">
                         </a>
                     </div>
-                    <div class="download-stats">
-                        <span class="stats-icon">🔥</span>
-                        <span class="stats-text" id="yesterday-downloads">...</span> people clicked to download yesterday
-                    </div>
                 </div>
             </div>
         </section>
@@ -75,12 +71,12 @@
                     if (data && typeof data.yesterday === 'number') {
                         document.getElementById('yesterday-downloads').innerText = data.yesterday.toLocaleString();
                     } else {
-                        document.getElementById('yesterday-downloads').innerText = "1,245"; // fallback
+                        document.getElementById('yesterday-downloads').innerText = "0"; // fallback
                     }
                 })
                 .catch(e => {
                     console.error('Failed to fetch stats', e);
-                    document.getElementById('yesterday-downloads').innerText = "1,245"; // fallback
+                    document.getElementById('yesterday-downloads').innerText = "0"; // fallback
                 });
 
             // Track clicks before redirecting
@@ -151,7 +147,12 @@
             </div>
         </section>
 
-
+        <section class="container" style="text-align: center; padding-bottom: 40px;">
+            <div class="download-stats">
+                <span class="stats-icon">🔥</span>
+                <span class="stats-text" id="yesterday-downloads">...</span> people clicked to download yesterday
+            </div>
+        </section>
 
     </main>
 
