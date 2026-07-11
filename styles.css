@@ -127,11 +127,12 @@ header nav {
     font-weight: 800;
     line-height: 1.1;
     margin-bottom: 24px;
+    text-shadow: 2px 2px 4px #000, -2px -2px 4px #000, 2px -2px 4px #000, -2px 2px 4px #000;
 }
 
 .gradient-text {
     color: var(--neon-green);
-    text-shadow: 0 0 15px var(--neon-green);
+    text-shadow: 2px 2px 4px #000, -2px -2px 4px #000, 2px -2px 4px #000, -2px 2px 4px #000, 0 0 15px var(--neon-green);
 }
 
 .hero-subtitle {
@@ -140,10 +141,14 @@ header nav {
     max-width: 600px;
     margin: 0 auto 40px;
     line-height: 1.7;
+    text-shadow: 1px 1px 2px #000, -1px -1px 2px #000;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    border-radius: 4px;
 }
 
 .download-section {
-    background: rgba(0, 20, 0, 0.8);
+    background: rgba(0, 0, 0, 0.95);
     border: 1px solid var(--neon-green);
     border-radius: 4px;
     padding: 32px 24px;
@@ -267,7 +272,7 @@ header nav {
 }
 
 .feature-card {
-    background: var(--bg-card);
+    background: rgba(0, 0, 0, 0.95);
     border: 1px solid var(--border-color);
     border-radius: 4px;
     padding: 32px;
@@ -313,7 +318,7 @@ header nav {
     display: flex;
     align-items: center;
     gap: 24px;
-    background: rgba(0, 20, 0, 0.8);
+    background: rgba(0, 0, 0, 0.95);
     border: 1px solid var(--neon-green);
     border-radius: 4px;
     padding: 32px;
