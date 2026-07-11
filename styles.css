@@ -106,8 +106,21 @@ header nav {
 
 /* Hero Section */
 .hero {
-    padding: 180px 24px 100px;
+    padding: 140px 24px 100px;
     text-align: center;
+}
+
+.hero-image {
+    max-width: 100%;
+    height: auto;
+    width: 600px;
+    border-radius: 8px;
+    border: 2px solid var(--neon-green);
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.4);
+    margin-bottom: 40px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .hero-badge {
