@@ -177,26 +177,6 @@ header nav {
     font-weight: 500;
 }
 
-.download-stats {
-    margin-top: 24px;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 16px;
-    background: rgba(0, 255, 65, 0.1);
-    border-radius: 4px;
-    border: 1px solid var(--neon-green);
-    font-size: 14px;
-    color: var(--neon-green);
-    box-shadow: 0 0 8px rgba(0, 255, 65, 0.3);
-}
-
-.stats-text {
-    font-weight: 700;
-    color: #fff;
-    text-shadow: 0 0 5px #fff;
-}
-
 .cta-buttons {
     display: flex;
     gap: 20px;

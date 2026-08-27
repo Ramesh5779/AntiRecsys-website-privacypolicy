@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=8">
+    <link rel="stylesheet" href="styles.css?v=9">
     <link rel="icon" type="image/png" href="app-icon.png">
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DCBG7D68JL"></script>
@@ -69,21 +69,6 @@
         </section>
 
         <script>
-            // Fetch real download stats from the backend
-            fetch('https://api.antirecsys.site/clicks/stats')
-                .then(res => res.json())
-                .then(data => {
-                    if (data && typeof data.yesterday === 'number') {
-                        document.getElementById('yesterday-downloads').innerText = data.yesterday.toLocaleString();
-                    } else {
-                        document.getElementById('yesterday-downloads').innerText = "0"; // fallback
-                    }
-                })
-                .catch(e => {
-                    console.error('Failed to fetch stats', e);
-                    document.getElementById('yesterday-downloads').innerText = "0"; // fallback
-                });
-
             // Track clicks before redirecting
             function trackClick(store, redirectUrl) {
                 // Send analytics to Google Analytics if available
@@ -149,13 +134,6 @@
                         servers, no analytics, no data selling.</p>
                     <a href="privacy.html" class="privacy-link">Read our Privacy Policy →</a>
                 </div>
-            </div>
-        </section>
-
-        <section class="container" style="text-align: center; padding-bottom: 40px;">
-            <div class="download-stats">
-                <span class="stats-icon">🔥</span>
-                <span class="stats-text" id="yesterday-downloads">...</span> people clicked to download yesterday
             </div>
         </section>
 
