@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - AntiRecsys</title>
-    <meta name="description" content="Privacy Policy for AntiRecsys - Your data stays on your device.">
+    <meta name="description" content="Privacy Policy for AntiRecsys — how your account, vault and local data are handled.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -33,26 +33,26 @@
         <div class="container">
             <div class="legal-header">
                 <h1>Privacy Policy</h1>
-                <p class="last-updated">Last updated: February 2026</p>
+                <p class="last-updated">Last updated: October 2026</p>
             </div>
 
             <div class="legal-content">
                 <section class="legal-section">
                     <h2>1. Overview</h2>
                     <p>
-                        AntiRecsys is a mindful browsing and focus tool. We operate on a
-                        <strong>"Local First"</strong> principle — your data never leaves your
-                        device. We have no servers, no cloud database, and no analytics that
-                        track your identity or behaviour remotely.
+                        AntiRecsys is a mindful browsing and focus tool. You sign in with Google so
+                        your 2nd Brain, custom skills and Pro subscription follow you across devices
+                        and reinstalls. Preferences stay on your device; your vault and account
+                        profile are stored securely on our servers under your Google identity. We
+                        do not sell your data, show ads, or track you across other companies' apps.
                     </p>
                 </section>
 
                 <section class="legal-section">
-                    <h2>2. Data We Store Locally</h2>
+                    <h2>2. Data Stored on Your Device</h2>
                     <p>
-                        The following data is stored <strong>exclusively on your device</strong>
-                        using the device's secure local storage (AsyncStorage on both iOS and
-                        Android). It is never transmitted to us or any third party:
+                        The following data is stored locally using the device's storage. A cached
+                        copy lets the app work offline:
                     </p>
                     <ul>
                         <li>Your selected topics and any custom topics you create</li>
@@ -61,20 +61,33 @@
                         <li>Focus Timer preferences (duration selected)</li>
                         <li>Notification on/off preference</li>
                         <li>Whether onboarding has been completed</li>
+                        <li>Cached vault items and custom skills for offline viewing</li>
+                        <li>A Keystore/Keychain-backed session token so you stay signed in</li>
                     </ul>
                 </section>
 
                 <section class="legal-section">
-                    <h2>3. Data We Do NOT Collect</h2>
-                    <p>We do not collect, store, or transmit:</p>
+                    <h2>3. Data We Collect</h2>
+                    <p>When you sign in with Google, we receive and store:</p>
                     <ul>
-                        <li>Your name, email address, or any personal identifiers</li>
-                        <li>Device identifiers (IDFA, GAID, etc.)</li>
-                        <li>Location data</li>
-                        <li>Contacts, camera, or microphone data</li>
-                        <li>Browsing history within third-party apps</li>
-                        <li>Any data for advertising or cross-app tracking purposes</li>
+                        <li>Your Google account ID, name, email address and profile photo</li>
+                        <li>Vault saves — URLs, titles, thumbnails, transcripts, AI summaries and notes</li>
+                        <li>Custom skills you generate and your Second Brain MCP connection URL</li>
+                        <li>Subscription status and trial eligibility (payment details are handled by Google Play / the App Store and are never seen by us)</li>
+                        <li>A legacy device identifier, only to move saves created before you signed in onto your Google account</li>
                     </ul>
+                    <p>We never collect:</p>
+                    <ul>
+                        <li>Your Google password or any other account password</li>
+                        <li>Precise location, contacts, camera or microphone data</li>
+                        <li>Your browsing history inside third-party apps</li>
+                        <li>Advertising identifiers or cross-app tracking data</li>
+                    </ul>
+                    <p>
+                        We use Cloudflare to host the API and database, RevenueCat to manage
+                        subscriptions, Expo Updates to deliver over-the-air updates, and Google Play
+                        Services for distribution and billing.
+                    </p>
                 </section>
 
                 <section class="legal-section">
